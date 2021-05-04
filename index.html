@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toast Personalizado</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="toast" class="toast is-on-screen">
+        <div class="toast__content">
+            <img class="toast__content__img" width="80"
+                src="https://imagepng.org/wp-content/uploads/2019/12/check-icone-scaled.png" alt="imagem ok" />
+            <p class="toast__content__message">
+                Parabéns! Sua requisição foi realizada com sucesso.
+            </p>
+        </div>
+        <div class="toast__ornament"></div>
+    </div>
+    <div class="button">
+        <button id="button">Toast</button>
+    </div>
+
+    <script>
+        var clickToast = document.getElementById("button");
+        var toast = document.getElementById("toast");
+
+        clickToast.addEventListener("click", () => {
+
+            if (toast.classList.contains("is-on-screen")) {
+                toast.classList.remove("is-on-screen");
+            } else {
+                toast.classList.add("is-on-screen");
+            }
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+* {
+  font-family: sans-serif;
+}
+
+html *,
+html *::before,
+html *::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+.toast {
+  height: 150px;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  top: 100px;
+  width: 660px;
+}
+
+.toast > * {
+  -webkit-transition: -webkit-transform 375ms cubic-bezier(0.64, 0, 0.78, 0);
+  transition: -webkit-transform 375ms cubic-bezier(0.64, 0, 0.78, 0);
+  transition: transform 375ms cubic-bezier(0.64, 0, 0.78, 0);
+  transition: transform 375ms cubic-bezier(0.64, 0, 0.78, 0), -webkit-transform 375ms cubic-bezier(0.64, 0, 0.78, 0);
+}
+
+.toast .in-on-screen > * {
+  -webkit-transform: initial;
+          transform: initial;
+  -webkit-transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+          transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.toast__content {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+  width: 100%;
+  -webkit-transform: translateX(calc(100% + 12px));
+          transform: translateX(calc(100% + 12px));
+}
+
+.is-on-screen .toast__content {
+  -webkit-transform: none;
+          transform: none;
+  -webkit-transition-delay: 300ms;
+          transition-delay: 300ms;
+}
+
+.toast__content__img {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.toast__content__message {
+  font-size: 25px;
+  color: white;
+}
+
+.toast__ornament {
+  background-color: #4bae4f;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition-delay: 150ms;
+          transition-delay: 150ms;
+}
+
+.is-on-screen .toast__ornament {
+  -webkit-transform: translateX(-12px);
+          transform: translateX(-12px);
+  -webkit-transition-delay: 0;
+          transition-delay: 0;
+}
+/*# sourceMappingURL=style.css.map */
